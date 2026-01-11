@@ -2,28 +2,55 @@ import { Card, Chip, Link, buttonVariants } from "@heroui/react";
 
 const PROJECTS = [
   {
-    title: "Event Platform",
+    title: "Real Estate Platform",
     description:
-      "A modern event platform with maps, authentication, and admin dashboard.",
-    tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+      "A full-stack real estate platform acting as a bridge between property owners, brokers, and clients. Includes role-based admin dashboard with permissions, authentication, and media storage.",
+    tech: [
+      "Next.js",
+      "ShadCN UI",
+      "TanStack Query",
+      "MongoDB",
+      "Firebase Auth & Storage",
+    ],
+    img: "realestate.webp",
+    live: "https://properties-realestate.vercel.app/",
+    github: "https://github.com/En-nnaddam/properties.realestate/",
+  },
+  {
+    title: "Live Analytics Dashboard",
+    description:
+      "A live analytics platform that processes XML data every 15 minutes, stores it in a SQLite database, and displays real-time charts with advanced filtering.",
+    tech: ["Next.js", "Shadcn ui", "SQLite", "Drizzle ORM", "XML Processing"],
+    img: "analytics.webp",
     live: "#",
     github: "#",
   },
   {
-    title: "Admin Dashboard",
+    title: "PCFY - Tech Marketplace",
     description:
-      "Role-based admin dashboard with authentication and analytics.",
-    tech: ["HeroUI", "React", "Firebase Auth"],
-    live: "#",
-    github: "#",
+      "A full-stack tech marketplace selling electronics such as laptops, desktops, and gaming accessories with secure authentication and cloud storage.",
+    tech: ["Next.js", "MongoDB", "AWS S3", "JWT Authentication"],
+    img: "pcfy.webp",
+    live: "https://pcfy.vercel.app",
+    github: "https://github.com/En-nnaddam/pcfy",
   },
   {
-    title: "Portfolio Builder",
+    title: "AvakinDB",
     description:
-      "A platform that allows users to create and publish portfolios easily.",
-    tech: ["Next.js", "MongoDB", "Zod"],
-    live: "#",
-    github: "#",
+      "A market and database platform that displays Avakin Life items with detailed information fetched from a live database. Backend and frontend are fully separated.",
+    tech: ["React.js", "MongoDB", "Node.js", "Express"],
+    img: "avakin.webp",
+    live: "https://avakindb.com/",
+    github: "https://github.com/En-nnaddam/lifeDtatabase-server",
+  },
+  {
+    title: "IPTVspo",
+    description:
+      "A modern landing page for an IPTV service focused on performance, clean UI, and responsive design.",
+    tech: ["Next.js", "Radix UI", "Tailwind CSS"],
+    img: "iptvspo.webp",
+    live: "https://iptvspo.com/",
+    github: "https://github.com/En-nnaddam/iptv-spo",
   },
 ];
 
@@ -45,7 +72,16 @@ export function Projects() {
             <Card key={project.title} className="transition hover:shadow-lg">
               {/* Image */}
               <Card.Content className="p-0">
-                <div className="h-44 bg-linear-to-br from-primary/20 to-cyan-400/20" />
+                {project.img ? (
+                  <img
+                    src={project.img}
+                    height={176}
+                    width={312}
+                    className="h-44"
+                  />
+                ) : (
+                  <div className="h-44 bg-linear-to-br from-primary/20 to-cyan-400/20" />
+                )}
               </Card.Content>
 
               {/* Header */}
